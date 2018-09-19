@@ -108,23 +108,25 @@
 
 
 
-  <meta name="description" content="求知若饥，虚心若愚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="技术宇航">
-<meta property="og:url" content="https://fyh.me/index.html">
+  <meta name="description" content="查看提案记录使用eosjs基本都能调用到EOS RPC的所有接口。调用get_actions获取并能筛选到提案记录，下方是get_actions返回的数据 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
+<meta name="keywords" content="eos,eosjs,hex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用eosjs解密EOS提案的HEX数据">
+<meta property="og:url" content="https://fyh.me/2018/09/19/eosjs-decode-hex/index.html">
 <meta property="og:site_name" content="技术宇航">
-<meta property="og:description" content="求知若饥，虚心若愚">
+<meta property="og:description" content="查看提案记录使用eosjs基本都能调用到EOS RPC的所有接口。调用get_actions获取并能筛选到提案记录，下方是get_actions返回的数据 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-19T12:57:42.888Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="技术宇航">
-<meta name="twitter:description" content="求知若饥，虚心若愚">
+<meta name="twitter:title" content="使用eosjs解密EOS提案的HEX数据">
+<meta name="twitter:description" content="查看提案记录使用eosjs基本都能调用到EOS RPC的所有接口。调用get_actions获取并能筛选到提案记录，下方是get_actions返回的数据 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fyh.me/"/>
+  <link rel="canonical" href="https://fyh.me/2018/09/19/eosjs-decode-hex/"/>
 
 
 
@@ -134,7 +136,7 @@
   };
 </script>
 
-  <title>技术宇航</title>
+  <title>使用eosjs解密EOS提案的HEX数据 | 技术宇航</title>
   
 
 
@@ -191,8 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,7 +234,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -293,9 +294,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -327,11 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/19/eosjs-decode-hex/" itemprop="url">
-                  使用eosjs解密EOS提案的HEX数据
-                </a>
+          <h1 class="post-title" itemprop="name headline">使用eosjs解密EOS提案的HEX数据
               
             
           </h1>
@@ -370,6 +367,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/19/eosjs-decode-hex/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/09/19/eosjs-decode-hex/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -394,9 +401,7 @@
       
 
       
-        
-          
-            <h1 id="查看提案记录"><a href="#查看提案记录" class="headerlink" title="查看提案记录"></a>查看提案记录</h1><p>使用<a href="https://github.com/EOSIO/eosjs" target="_blank" rel="noopener">eosjs</a>基本都能调用到<a href="https://developers.eos.io/eosio-nodeos/reference" target="_blank" rel="noopener">EOS RPC</a>的所有接口。调用<code>get_actions</code>获取并能筛选到提案记录，下方是<code>get_actions</code>返回的数据</p>
+        <h1 id="查看提案记录"><a href="#查看提案记录" class="headerlink" title="查看提案记录"></a>查看提案记录</h1><p>使用<a href="https://github.com/EOSIO/eosjs" target="_blank" rel="noopener">eosjs</a>基本都能调用到<a href="https://developers.eos.io/eosio-nodeos/reference" target="_blank" rel="noopener">EOS RPC</a>的所有接口。调用<code>get_actions</code>获取并能筛选到提案记录，下方是<code>get_actions</code>返回的数据</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"actions"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"global_action_seq"</span>:<span class="number">13047273</span>,</span><br><span class="line">            <span class="attr">"account_action_seq"</span>:<span class="number">0</span>,</span><br><span class="line">            <span class="attr">"block_num"</span>:<span class="number">6385327</span>,</span><br><span class="line">            <span class="attr">"block_time"</span>:<span class="string">"2018-08-22T09:22:19.000"</span>,</span><br><span class="line">            <span class="attr">"action_trace"</span>:&#123;</span><br><span class="line">                <span class="attr">"receipt"</span>:&#123;</span><br><span class="line">                    <span class="attr">"receiver"</span>:<span class="string">"eosio.msig"</span>,</span><br><span class="line">                    <span class="attr">"act_digest"</span>:<span class="string">"245b5fefa7f360400b43ede7606c0fe66f513ad7da7ecca31bc7f8b476dd5ea1"</span>,</span><br><span class="line">                    <span class="attr">"global_sequence"</span>:<span class="number">13047273</span>,</span><br><span class="line">                    <span class="attr">"recv_sequence"</span>:<span class="number">312</span>,</span><br><span class="line">                    <span class="attr">"auth_sequence"</span>:[</span><br><span class="line">                        [</span><br><span class="line">                            <span class="string">"fanyinghaohh"</span>,</span><br><span class="line">                            <span class="number">1</span></span><br><span class="line">                        ]</span><br><span class="line">                    ],</span><br><span class="line">                    <span class="attr">"code_sequence"</span>:<span class="number">1</span>,</span><br><span class="line">                    <span class="attr">"abi_sequence"</span>:<span class="number">1</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"act"</span>:&#123;</span><br><span class="line">                    <span class="attr">"account"</span>:<span class="string">"eosio.msig"</span>,</span><br><span class="line">                    <span class="attr">"name"</span>:<span class="string">"propose"</span>,</span><br><span class="line">                    <span class="attr">"authorization"</span>:[</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="attr">"actor"</span>:<span class="string">"fanyinghaohh"</span>,</span><br><span class="line">                            <span class="attr">"permission"</span>:<span class="string">"active"</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    ],</span><br><span class="line">                    <span class="attr">"data"</span>:&#123;</span><br><span class="line">                        <span class="attr">"proposer"</span>:<span class="string">"fanyinghaohh"</span>,</span><br><span class="line">                        <span class="attr">"proposal_name"</span>:<span class="string">"trkcgpeetgqx"</span>,</span><br><span class="line">                        <span class="attr">"requested"</span>:[</span><br><span class="line">                            &#123;</span><br><span class="line">                                <span class="attr">"actor"</span>:<span class="string">"fanyinghaoaa"</span>,</span><br><span class="line">                                <span class="attr">"permission"</span>:<span class="string">"active"</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                <span class="attr">"actor"</span>:<span class="string">"fanyinghaobb"</span>,</span><br><span class="line">                                <span class="attr">"permission"</span>:<span class="string">"active"</span></span><br><span class="line">                            &#125;,</span><br><span class="line">                            &#123;</span><br><span class="line">                                <span class="attr">"actor"</span>:<span class="string">"fanyinghaoio"</span>,</span><br><span class="line">                                <span class="attr">"permission"</span>:<span class="string">"active"</span></span><br><span class="line">                            &#125;</span><br><span class="line">                        ],</span><br><span class="line">                        <span class="attr">"trx"</span>:&#123;</span><br><span class="line">                            <span class="attr">"expiration"</span>:<span class="string">"2018-08-22T10:22:18"</span>,</span><br><span class="line">                            <span class="attr">"ref_block_num"</span>:<span class="number">28008</span>,</span><br><span class="line">                            <span class="attr">"ref_block_prefix"</span>:<span class="number">1387059851</span>,</span><br><span class="line">                            <span class="attr">"max_net_usage_words"</span>:<span class="number">0</span>,</span><br><span class="line">                            <span class="attr">"max_cpu_usage_ms"</span>:<span class="number">0</span>,</span><br><span class="line">                            <span class="attr">"delay_sec"</span>:<span class="number">0</span>,</span><br><span class="line">                            <span class="attr">"context_free_actions"</span>:[</span><br><span class="line"></span><br><span class="line">                            ],</span><br><span class="line">                            <span class="attr">"actions"</span>:[</span><br><span class="line">                                &#123;</span><br><span class="line">                                    <span class="attr">"account"</span>:<span class="string">"eosio.token"</span>,</span><br><span class="line">                                    <span class="attr">"name"</span>:<span class="string">"transfer"</span>,</span><br><span class="line">                                    <span class="attr">"authorization"</span>:[</span><br><span class="line">                                        &#123;</span><br><span class="line">                                            <span class="attr">"actor"</span>:<span class="string">"fanyinghaoab"</span>,</span><br><span class="line">                                            <span class="attr">"permission"</span>:<span class="string">"active"</span></span><br><span class="line">                                        &#125;</span><br><span class="line">                                    ],</span><br><span class="line">                                    <span class="attr">"data"</span>:<span class="string">"700c358d4de7a759401d358d4de7a759102700000000000004454f53000000000166"</span></span><br><span class="line">                                &#125;</span><br><span class="line">                            ],</span><br><span class="line">                            <span class="attr">"transaction_extensions"</span>:[</span><br><span class="line"></span><br><span class="line">                            ]</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="attr">"hex_data"</span>:<span class="string">"d01a358d4de7a759d02dcb4a5586e0cd03600c358d4de7a75900000000a8ed3232700e358d4de7a75900000000a8ed3232401d358d4de7a75900000000a8ed32325a397d5b686d8bdaac52000000000100a6823403ea3055000000572d3ccdcd01700c358d4de7a75900000000a8ed323222700c358d4de7a759401d358d4de7a759102700000000000004454f5300000000016600"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="attr">"elapsed"</span>:<span class="number">771</span>,</span><br><span class="line">                <span class="attr">"cpu_usage"</span>:<span class="number">0</span>,</span><br><span class="line">                <span class="attr">"console"</span>:<span class="string">""</span>,</span><br><span class="line">                <span class="attr">"total_cpu_usage"</span>:<span class="number">0</span>,</span><br><span class="line">                <span class="attr">"trx_id"</span>:<span class="string">"142d7c376c6c4d6d62668ac8b1d832233fe00048e02d87a12897b7a0f9a355b6"</span>,</span><br><span class="line">                <span class="attr">"inline_traces"</span>:[</span><br><span class="line"></span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"last_irreversible_block"</span>:<span class="number">11119406</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一切看似简单，当想到需要得知这个提案通过后执行什么操作，在哪里查呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">action_trace.act.data.trx.actions[<span class="number">0</span>].data = <span class="string">"700c358d4de7a759401d358d4de7a759102700000000000004454f53000000000166"</span></span><br></pre></td></tr></table></figure></p>
 <p>这到底又是什么鬼呢？直觉告诉我这就是我要找的数据。</p>
@@ -409,8 +414,6 @@
 <p>文件里引用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Fcbuffer = <span class="built_in">require</span>(<span class="string">"fcbuffer"</span>);</span><br></pre></td></tr></table></figure></p>
 <p>调用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Helpers.getLatestProposals = <span class="function"><span class="params">name</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    eos.getActions(name, <span class="number">-1</span>, <span class="number">-100</span>).then(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        resolve(</span><br><span class="line">          res.actions</span><br><span class="line">            .filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">return</span> item.action_trace.act.name === <span class="string">"propose"</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">            .map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">              item.action_trace.act.data.trx.actions = <span class="built_in">Array</span>.prototype.map.call(</span><br><span class="line">                item.action_trace.act.data.trx.actions,</span><br><span class="line">                action =&gt; &#123;</span><br><span class="line">                  <span class="keyword">try</span> &#123;</span><br><span class="line">                    action.origin_data = Fcbuffer.fromBuffer(</span><br><span class="line">                      eos.fc.abiCache.abi(action.account).structs[action.name],</span><br><span class="line">                      Buffer.from(action.data, <span class="string">"hex"</span>)</span><br><span class="line">                    );</span><br><span class="line">                    <span class="keyword">return</span> action;</span><br><span class="line">                  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">                    <span class="comment">// Abi 'eosio.xxxx' is not cached</span></span><br><span class="line">                    eos.getAbi(action.account).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                      action.origin_data = Fcbuffer.fromBuffer(</span><br><span class="line">                        eos.fc.abiCache.abi(action.account).structs[</span><br><span class="line">                          action.name</span><br><span class="line">                        ],</span><br><span class="line">                        Buffer.from(action.data, <span class="string">"hex"</span>)</span><br><span class="line">                      );</span><br><span class="line">                      <span class="keyword">return</span> action;</span><br><span class="line">                    &#125;);</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">              );</span><br><span class="line">              <span class="keyword">return</span> item;</span><br><span class="line">            &#125;)</span><br><span class="line">            .sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">if</span> (a.account_action_seq &gt; b.account_action_seq) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">              <span class="keyword">if</span> (a.account_action_seq &lt; b.account_action_seq) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">              <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        );</span><br><span class="line">      &#125;,</span><br><span class="line">      err =&gt; &#123;</span><br><span class="line">        reject(err);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
 
@@ -428,378 +431,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/08/01/blockchain-ethereum-smart-contract-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="范生">
-      <meta itemprop="description" content="求知若饥，虚心若愚">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术宇航">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/blockchain-ethereum-smart-contract-notes/" itemprop="url">
-                  以太坊智能合约学习摘录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-01 09:33:52" itemprop="dateCreated datePublished" datetime="2018-08-01T09:33:52+08:00">2018-08-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-19 20:15:38" itemprop="dateModified" datetime="2018-09-19T20:15:38+08:00">2018-09-19</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/eos/" rel="tag"># eos</a>
           
-            
+            <a href="/tags/eosjs/" rel="tag"># eosjs</a>
           
-
+            <a href="/tags/hex/" rel="tag"># hex</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://ethereum.stackexchange.com/a/33482" target="_blank" rel="noopener">https://ethereum.stackexchange.com/a/33482</a></p>
-<blockquote>
-<p>You’ll notice that there some more functions in your basic token contract, like approve, sendFrom and others. These functions are there for your token to interact with other contracts: if you want, say, sell tokens to a decentralized exchange, just sending them to an address will not be enough as the exchange will not be aware of the new tokens or who sent them, because contracts aren’t able to subscribe to Events only to function calls. So for contracts, you should first approve an amount of tokens they can move from your account and then ping them to let them know they should do their thing - or do the two actions in one, with approveAndCall.</p>
-</blockquote>
-<p>AB币交换</p>
-<pre><code>A合约      B合约
-</code></pre><p>甲   </p>
-<p>乙</p>
-<p>怎么用openssl创建钱包</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/07/15/blockchain-bitcoin-notes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="范生">
-      <meta itemprop="description" content="求知若饥，虚心若愚">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术宇航">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/15/blockchain-bitcoin-notes/" itemprop="url">
-                  比特币学习摘录
-                </a>
-              
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/08/01/blockchain-ethereum-smart-contract-notes/" rel="next" title="以太坊智能合约学习摘录">
+                <i class="fa fa-chevron-left"></i> 以太坊智能合约学习摘录
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-15 13:22:08" itemprop="dateCreated datePublished" datetime="2018-07-15T13:22:08+08:00">2018-07-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-31 14:44:58" itemprop="dateModified" datetime="2018-07-31T14:44:58+08:00">2018-07-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>摘录自<a href="https://github.com/ethereum/wiki/wiki/%5B%E4%B8%AD%E6%96%87%5D-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%99%BD%E7%9A%AE%E4%B9%A6" target="_blank" rel="noopener">以太坊白皮书</a>，文中前部分从技术角度解析比特币区块链的原理，我只是划重点把比特币部分知识点摘抄下来。</p>
-<h1 id="作为状态转换系统的比特币"><a href="#作为状态转换系统的比特币" class="headerlink" title="作为状态转换系统的比特币"></a>作为状态转换系统的比特币</h1><p>从技术角度讲，比特币账本可以被认为是一个状态转换系统，该系统包括所有现存的比特币所有权状态和“状态转换函数”。状态转换函数以当前状态和交易为输入，输出新的状态。例如，在标准的银行系统中，状态就是一个资产负债表，一个从A账户向B账户转账X美元的请求是一笔交易，状态转换函数将从A账户中减去X美元，向B账户增加X美元。如果A账户的余额小于X美元，状态转换函数就会返回错误提示。所以我们可以如下定义状态转换函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(S,TX) ­&gt; S&apos; or ERROR</span><br></pre></td></tr></table></figure>
-<p>在上面提到的银行系统中，状态转换函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(&#123; Alice: $50, Bob: $50 &#125;,&quot;send $20 from Alice to Bob&quot;) = &#123; Alice: $30,Bob: $70 &#125;</span><br></pre></td></tr></table></figure>
-<p>但是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(&#123; Alice: $50, Bob: $50 &#125;,&quot;send $70 from Alice to Bob&quot;) = ERROR</span><br></pre></td></tr></table></figure>
-<p>比特币系统的“状态”是所有已经被挖出的、没有花费的比特币（技术上称为“未花费的交易输出，unspent transaction outputs 或UTXO”）的集合。每个UTXO都有一个面值和所有者（由20个字节的本质上是密码学公钥的地址所定义）。一笔交易包括一个或多个输入和一个或多个输出。每个输入包含一个对现有UTXO的引用和由与所有者地址相对应的私钥创建的密码学签名。每个输出包含一个新的加入到状态中的UTXO。</p>
-<p>在比特币系统中，状态转换函数APPLY(S,TX)-&gt;S’大体上可以如下定义：</p>
-<blockquote>
-<ol>
-<li>交易的每个输入：<ul>
-<li>如果引用的UTXO不存在于现在的状态中（S），返回错误提示</li>
-<li>如果签名与UTXO所有者的签名不一致，返回错误提示</li>
-</ul>
-</li>
-<li>如果所有的UTXO输入面值总额小于所有的UTXO输出面值总额，返回错误提示</li>
-<li>返回新状态S’,新状态S’中移除了所有的输入UTXO，增加了所有的输出UTXO。</li>
-</ol>
-</blockquote>
-<p>第一步的第一部分防止交易的发送者花费不存在的比特币，第二部分防止交易的发送者花费其他人的比特币。第二步确保价值守恒。比特币的支付协议如下。假设Alice想给Bob发送11.7BTC。事实上，Alice不可能正好有11.7BTC。假设，她能得到的最小数额比特币的方式是：6+4+2=12。所以，她可以创建一笔有3个输入，2个输出的交易。第一个输出的面值是11.7BTC，所有者是Bob（Bob的比特币地址），第二个输出的面值是0.3BTC，所有者是Alice自己，也就是找零。</p>
-<h1 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h1><p>比特币的去中心化共识进程要求网络中的节点不断尝试将交易打包成“区块”。网络被设计为大约每十分钟产生一个区块，每个区块包含一个时间戳、一个随机数、一个对上一个区块的引用（即哈希）和上一区块生成以来发生的所有交易列表。这样随着时间流逝就创建出了一个持续增长的区块链，它不断地更新，从而能够代表比特币账本的最新状态。</p>
-<p>依照这个范式，检查一个区块是否有效的算法如下：</p>
-<blockquote>
-<ol>
-<li>检查区块引用的上一个区块是否存在且有效。</li>
-<li>检查区块的时间戳是否晚于以前的区块的时间戳，而且早于未来2小时。</li>
-<li>检查区块的工作量证明是否有效。</li>
-<li>将上一个区块的最终状态赋于S[0]。</li>
-<li>假设TX是区块的交易列表，包含n笔交易。对于属于0……n-1的所有i,进行状态转换S[i+1] = APPLY(S[i],TX[i])。如果任何一笔交易i在状态转换中出错，退出程序，返回错误。</li>
-<li>返回正确，状态S[n]是这一区块的最终状态。</li>
-</ol>
-</blockquote>
-<p>区块验证算法的有趣部分是“工作量证明”概念：对每个区块进行SHA256哈希处理，将得到的哈希视为长度为256比特的数值，该数值必须小于不断动态调整的目标数值，本书写作时目标数值大约是2^190。工作量证明的目的是使区块的创建变得困难，从而阻止女巫攻击者恶意重新生成区块链。因为SHA256是完全不可预测的伪随机函数，创建有效区块的唯一方法就是简单地不断试错，不断地增加随机数的数值，查看新的哈希数值是否小于目标数值。如果当前的目标数值是2^192，就意味着平均需要尝试2^64次才能生成有效的区块。一般而言，比特币网络每隔2016个区块重新设定目标数值，保证平均每十分钟生成一个区块。为了对矿工的计算工作进行奖励，每一个成功生成区块的矿工有权在区块中包含一笔凭空发给他们自己25BTC的交易。另外，如果交易的输入大于输出，差额部分就作为“交易费用”付给矿工。顺便提一下，对矿工的奖励是比特币发行的唯一机制，创世状态中并没有比特币。</p>
-<h1 id="默克尔树"><a href="#默克尔树" class="headerlink" title="默克尔树"></a>默克尔树</h1><p>默克尔树是一种二叉树，由一组叶节点、一组中间节点和一个根节点构成。最下面的大量的叶节点包含基础数据，每个中间节点是它的两个子节点的哈希，根节点也是由它的两个子节点的哈希，代表了默克尔树的顶部。默克尔树的目的是允许区块的数据可以零散地传送：节点可以从一个源下载区块头，从另外的源下载与其有关的树的其它部分，而依然能够确认所有的数据都是正确的。之所以如此是因为哈希向上的扩散：如果一个恶意用户尝试在树的下部加入一个伪造的交易，所引起的改动将导致树的上层节点的改动，以及更上层节点的改动，最终导致根节点的改动以及区块哈希的改动，这样协议就会将其记录为一个完全不同的区块（几乎可以肯定是带着不正确的工作量证明的）。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -809,204 +474,22 @@
   </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/07/12/nginx-docker-miniprogram/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="范生">
-      <meta itemprop="description" content="求知若饥，虚心若愚">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="技术宇航">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/nginx-docker-miniprogram/" itemprop="url">
-                  利用 Nginx 做反向代理解决微信小程序业务域名限制问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-12 20:29:10" itemprop="dateCreated datePublished" datetime="2018-07-12T20:29:10+08:00">2018-07-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-31 10:56:51" itemprop="dateModified" datetime="2018-07-31T10:56:51+08:00">2018-07-31</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/项目总结/" itemprop="url" rel="index"><span itemprop="name">项目总结</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近做了一个世界杯比赛日程的小程序，只有查看日程的功能，所以很快就发布上线了。后边想加入用户预测功能，但是时间紧、前后端实现又比较复杂，突然灵机一动想到用webview嵌入FIFA官网的比赛预测页面。</p>
-<p>微信小程序支持通过webview来内嵌网页，但是要求业务域名预先审核配置，就是说只能是你自己拥有的并且已经备案的域名。明显，我并不拥有FIFA官网，因而无法配置为业务域名。不过我可以利用<a href="https://nginx.org/" target="_blank" rel="noopener">Nginx</a>做反向代理（非透明代理，与之相反的是透明代理），利用自己的域名（<a href="https://api.wecode.net.cn" target="_blank" rel="noopener">https://api.wecode.net.cn</a> ），把网页请求转发到FIFA官网（<a href="https://www.fifaofficial.cn" target="_blank" rel="noopener">https://www.fifaofficial.cn</a> ），这样我就不用开发就直接展示FIFA官方内容。</p>
-<h2 id="反向代理网页内容"><a href="#反向代理网页内容" class="headerlink" title="反向代理网页内容"></a>反向代理网页内容</h2><p>一个网页的展示，首先得有HTML内容。把 <a href="https://api.wecode.net.cn" target="_blank" rel="noopener">https://api.wecode.net.cn</a> 页面反向代理到 <a href="https://www.fifaofficial.cn" target="_blank" rel="noopener">https://www.fifaofficial.cn</a> ，这时请求就会得到目标网页的HTML内容返回。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location ^~/ &#123;</span><br><span class="line">    proxy_set_header Accept-Encoding &quot;&quot;;</span><br><span class="line">    proxy_set_header Referer &quot;https://www.fifaofficial.cn/&quot;;</span><br><span class="line">    proxy_pass http://www.fifaofficial.cn/;</span><br><span class="line"></span><br><span class="line">    add_header Access-Control-Allow-Origin *;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这个不仅能处理index页面的请求，因为<code>^~/</code>路由的是所有host为api.wecode.net.cn的所有请求。所以，给请求的返回加入<code>Access-Control-Allow-Origin</code>头，可以避免一些请求数据的跨域问题。</p>
-<h2 id="反向代理静态资源"><a href="#反向代理静态资源" class="headerlink" title="反向代理静态资源"></a>反向代理静态资源</h2><p>在网页里，通常都会包含很多静态资源的引用，如css、js、font等，同时都是使用cdn加速，所以会是使用不同的域名。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//cdn.fifaofficial.cn/assets/css/76151aa27c3d7972aa5c.styles.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>第一，把html中的静态资源引用域名替换为自己的域名下，所以刚才的配置中要加入<code>sub_filter</code>(<a href="https://nginx.org/en/docs/http/ngx_http_sub_module.html" target="_blank" rel="noopener">文档</a>)替换声明</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">location ^~/ &#123;</span><br><span class="line">    proxy_set_header Accept-Encoding &quot;&quot;;</span><br><span class="line">    proxy_set_header Referer &quot;https://www.fifaofficial.cn/&quot;;</span><br><span class="line">    proxy_pass http://www.fifaofficial.cn/;</span><br><span class="line"></span><br><span class="line">    add_header Access-Control-Allow-Origin *;</span><br><span class="line"></span><br><span class="line">    sub_filter &apos;cdn.fifaofficial.cn&apos; &apos;api.wecode.net.cn&apos;;</span><br><span class="line">    sub_filter_types text/css text/xml text/html text/javascript application/json application/javascript;</span><br><span class="line">    sub_filter_once off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第二，反向代理静态资源文件。如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdn.fifaofficial.cn/assets/.....css    ===&gt; api.wecode.net.cn/styles/.....css</span><br></pre></td></tr></table></figure>
-<p>Nginx配置为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">location ~* \.(?:css|js|ttf|woff|svg|ico|png|jpg)$ &#123;</span><br><span class="line">    proxy_set_header Accept-Encoding &quot;&quot;;</span><br><span class="line">    proxy_set_header Referer &quot;https://www.fifaofficial.cn/&quot;;</span><br><span class="line">    proxy_pass http://cdn.fifaofficial.cn/$request_uri;</span><br><span class="line"></span><br><span class="line">    add_header Access-Control-Allow-Origin *;</span><br><span class="line"></span><br><span class="line">    sub_filter &apos;cdn.fifaofficial.cn&apos; &apos;api.wecode.net.cn&apos;;</span><br><span class="line">    sub_filter_types text/css text/xml text/html text/javascript application/javascript application/json;</span><br><span class="line">    sub_filter_once off;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于css、js等文件内也会引用别的资源，所以也是需要加入<code>sub_filter</code>替换声明的。</p>
-<h2 id="配置SSL证书"><a href="#配置SSL证书" class="headerlink" title="配置SSL证书"></a>配置SSL证书</h2><p>微信小程序要求服务器使用SSL协议，所以也需要配置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name  api.wecode.net.cn;</span><br><span class="line"></span><br><span class="line">    #ssl                      on;</span><br><span class="line">    ssl_certificate          /etc/nginx/certs/api.wecode.net.cn_bundle.crt;</span><br><span class="line">    ssl_certificate_key      /etc/nginx/certs/api.wecode.net.cn.key;</span><br><span class="line"></span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用Docker部署Nginx服务"><a href="#使用Docker部署Nginx服务" class="headerlink" title="使用Docker部署Nginx服务"></a>使用Docker部署Nginx服务</h2><p>最近我也在学习容器服务，就尝试把Nginx服务部署到一个<a href="https://www.docker.org" target="_blank" rel="noopener">Docker</a>容器中。安装好Docker后，执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run \ </span><br><span class="line">  --rm \  </span><br><span class="line">  --name mynginx \  </span><br><span class="line">  --volume <span class="string">"<span class="variable">$PWD</span>/conf"</span>:/etc/nginx \</span><br><span class="line">  --volume <span class="string">"<span class="variable">$PWD</span>/logs"</span>:/var/<span class="built_in">log</span>/nginx/ \</span><br><span class="line">  -p 127.0.0.1:443:443 \</span><br><span class="line">  -d \</span><br><span class="line">  nginx</span><br></pre></td></tr></table></figure>
-<p>上面的Nginx配置文件<code>default.conf</code>就是保存在<code>/conf</code>目录下，所以把文件目录<code>/conf</code>映射到<code>/etc/nginx</code>。<code>/logs</code>目录映射即是存放日志文件，方便查看Nginx服务的日志。另外，<code>-p</code>就是映射端口。</p>
-<p>这时就可以访问 <a href="https://api.wecode.net.cn" target="_blank" rel="noopener">https://api.wecode.net.cn</a> 就得到我想要的内容了，轻松把FIFA官方内容嵌入到我的小程序里。</p>
-<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p>完整代码放到了 <a href="https://github.com/fanyinghao/nginx-docker-miniprogram" target="_blank" rel="noopener">https://github.com/fanyinghao/nginx-docker-miniprogram</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1027,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1131,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#查看提案记录"><span class="nav-number">1.</span> <span class="nav-text">查看提案记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Decode-HEX-方法"><span class="nav-number">2.</span> <span class="nav-text">Decode HEX 方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1279,6 +787,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -1308,6 +820,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'fanyinghao',
+            repo: 'fanyinghao.github.io',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '93b52962508cc274c2e8049ab5106b78ce1aeaea',
+            
+                client_id: '39bce08eba7c8e1517b1'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
