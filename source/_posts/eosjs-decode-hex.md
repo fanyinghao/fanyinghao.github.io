@@ -261,3 +261,4 @@ Helpers.getLatestProposals = name => {
 };
 
 ```
+这样我就得到了从16进制串转回的原数据`action.origin_data`。使用同样的方法，可以也对`data_hex`整个transaction的数据进行decode。至于为什么要对提案的Transaction这么存储，这是保证在提案通过后执行的事务是一致的HEX数据，
