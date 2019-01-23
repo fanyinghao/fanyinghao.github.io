@@ -310,6 +310,310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fyh.me/2019/01/23/how-to-access-host-port-from-docker-container/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范生">
+      <meta itemprop="description" content="求知若饥，虚心若愚">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术宇航">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/23/how-to-access-host-port-from-docker-container/" itemprop="url">
+                  Docker容器怎么访问宿主机的服务
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-23 16:28:28 / 修改时间：16:47:53" itemprop="dateCreated datePublished" datetime="2019-01-23T16:28:28+08:00">2019-01-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do?</p>
+<p>如果宿主机上已经部署了mysql服务, 怎样才能让docker 得容器实例中的程序访问到mysql服务呢？</p>
+<p>I found answer from the stackoverflow:</p>
+<p>通过搜索，我找到了以下相关线索：</p>
+<blockquote>
+<p>For example, on my system:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip addr show docker0</span><br><span class="line">&gt; 7: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default </span><br><span class="line">&gt; link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">&gt; inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt; inet6 fe80::f4d2:49ff:fedd:28a0/64 scope link </span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>And inside a container:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip route show</span><br><span class="line">&gt; default via 172.17.0.1 dev eth0 </span><br><span class="line">&gt; 172.17.0.0/16 dev eth0  src 172.17.0.4 </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>It’s fairly easy to extract this IP address using a simple shell script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">#!/bin/sh</span></span><br><span class="line">&gt; hostip=$(ip route show | awk <span class="string">'/default/ &#123;print $3&#125;'</span>)</span><br><span class="line">&gt; <span class="built_in">echo</span> <span class="variable">$hostip</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>You may need to modify the iptables rules on your host to permit connections from Docker containers. Something like this will do the trick:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ iptables -A INPUT -i docker0 -j ACCEPT</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>This would permit access to any ports on the host from Docker containers. Note that:</p>
+<ul>
+<li>iptables rules are ordered, and this rule may or may not do the right thing depending on what other rules come before it.</li>
+<li>you will only be able to access host services that are either (a) listening on INADDR_ANY (aka 0.0.0.0) or that are explicitly listening on the docker0 interface.</li>
+</ul>
+</blockquote>
+<p>REF：<a href="https://stackoverflow.com/questions/31324981/how-to-access-host-port-from-docker-container/31328031" target="_blank" rel="noopener">https://stackoverflow.com/questions/31324981/how-to-access-host-port-from-docker-container/31328031</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/10/19/gitlab-runner-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范生">
+      <meta itemprop="description" content="求知若饥，虚心若愚">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术宇航">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/19/gitlab-runner-notes/" itemprop="url">
+                  使用Docker部署Gitlab Runner遇到的坑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-19 17:18:46 / 修改时间：17:27:01" itemprop="dateCreated datePublished" datetime="2018-10-19T17:18:46+08:00">2018-10-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。</p>
+<p>我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/09/19/eosjs-decode-hex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1044,7 +1348,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1092,7 +1396,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1146,7 +1454,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

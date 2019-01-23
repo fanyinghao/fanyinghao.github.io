@@ -108,23 +108,24 @@
 
 
 
-  <meta name="description" content="求知若饥，虚心若愚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="技术宇航">
-<meta property="og:url" content="https://fyh.me/tags/nginx/index.html">
+  <meta name="description" content="If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do? 如果宿主机上已经部署了m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker容器怎么访问宿主机的服务">
+<meta property="og:url" content="https://fyh.me/2019/01/23/how-to-access-host-port-from-docker-container/index.html">
 <meta property="og:site_name" content="技术宇航">
-<meta property="og:description" content="求知若饥，虚心若愚">
+<meta property="og:description" content="If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do? 如果宿主机上已经部署了m">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-23T08:47:53.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="技术宇航">
-<meta name="twitter:description" content="求知若饥，虚心若愚">
+<meta name="twitter:title" content="Docker容器怎么访问宿主机的服务">
+<meta name="twitter:description" content="If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do? 如果宿主机上已经部署了m">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fyh.me/tags/nginx/"/>
+  <link rel="canonical" href="https://fyh.me/2019/01/23/how-to-access-host-port-from-docker-container/"/>
 
 
 
@@ -134,7 +135,7 @@
   };
 </script>
 
-  <title>标签: nginx | 技术宇航</title>
+  <title>Docker容器怎么访问宿主机的服务 | 技术宇航</title>
   
 
 
@@ -191,7 +192,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,7 +241,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -289,81 +290,207 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>nginx<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fyh.me/2019/01/23/how-to-access-host-port-from-docker-container/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范生">
+      <meta itemprop="description" content="求知若饥，虚心若愚">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术宇航">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/12/nginx-docker-miniprogram/" itemprop="url">
-              
-                <span itemprop="name">利用 Nginx 做反向代理解决微信小程序业务域名限制问题</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Docker容器怎么访问宿主机的服务
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-12T20:29:10+08:00"
-              content="2018-07-12" >
-          07-12
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-23 16:28:28 / 修改时间：16:47:53" itemprop="dateCreated datePublished" datetime="2019-01-23T16:28:28+08:00">2019-01-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/23/how-to-access-host-port-from-docker-container/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/23/how-to-access-host-port-from-docker-container/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do?</p>
+<p>如果宿主机上已经部署了mysql服务, 怎样才能让docker 得容器实例中的程序访问到mysql服务呢？</p>
+<p>I found answer from the stackoverflow:</p>
+<p>通过搜索，我找到了以下相关线索：</p>
+<blockquote>
+<p>For example, on my system:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip addr show docker0</span><br><span class="line">&gt; 7: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default </span><br><span class="line">&gt; link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">&gt; inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt; inet6 fe80::f4d2:49ff:fedd:28a0/64 scope link </span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>And inside a container:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip route show</span><br><span class="line">&gt; default via 172.17.0.1 dev eth0 </span><br><span class="line">&gt; 172.17.0.0/16 dev eth0  src 172.17.0.4 </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>It’s fairly easy to extract this IP address using a simple shell script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">#!/bin/sh</span></span><br><span class="line">&gt; hostip=$(ip route show | awk <span class="string">'/default/ &#123;print $3&#125;'</span>)</span><br><span class="line">&gt; <span class="built_in">echo</span> <span class="variable">$hostip</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>You may need to modify the iptables rules on your host to permit connections from Docker containers. Something like this will do the trick:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ iptables -A INPUT -i docker0 -j ACCEPT</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>This would permit access to any ports on the host from Docker containers. Note that:</p>
+<ul>
+<li>iptables rules are ordered, and this rule may or may not do the right thing depending on what other rules come before it.</li>
+<li>you will only be able to access host services that are either (a) listening on INADDR_ANY (aka 0.0.0.0) or that are explicitly listening on the docker0 interface.</li>
+</ul>
+</blockquote>
+<p>REF：<a href="https://stackoverflow.com/questions/31324981/how-to-access-host-port-from-docker-container/31328031" target="_blank" rel="noopener">https://stackoverflow.com/questions/31324981/how-to-access-host-port-from-docker-container/31328031</a></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/19/gitlab-runner-notes/" rel="next" title="使用Docker部署Gitlab Runner遇到的坑">
+                <i class="fa fa-chevron-left"></i> 使用Docker部署Gitlab Runner遇到的坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -640,6 +767,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -669,6 +800,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'fanyinghao',
+            repo: 'fanyinghao.github.io',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '93b52962508cc274c2e8049ab5106b78ce1aeaea',
+            
+                client_id: '39bce08eba7c8e1517b1'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
