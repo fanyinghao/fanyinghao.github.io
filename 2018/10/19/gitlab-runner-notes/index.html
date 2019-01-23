@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成">
+  <meta name="description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成 Docker in Dockergitlab runner跑在了docker容器中，而runner执行每个pipl">
 <meta name="keywords" content="docker,gitlab,gitlab runner">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Docker部署Gitlab Runner遇到的坑">
 <meta property="og:url" content="https://fyh.me/2018/10/19/gitlab-runner-notes/index.html">
 <meta property="og:site_name" content="技术宇航">
-<meta property="og:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成">
+<meta property="og:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成 Docker in Dockergitlab runner跑在了docker容器中，而runner执行每个pipl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-19T09:27:01.834Z">
+<meta property="og:updated_time" content="2019-01-23T09:05:18.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Docker部署Gitlab Runner遇到的坑">
-<meta name="twitter:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成">
+<meta name="twitter:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成 Docker in Dockergitlab runner跑在了docker容器中，而runner执行每个pipl">
 
 
 
@@ -353,12 +353,24 @@
                 
               
 
-              <time title="创建时间：2018-10-19 17:18:46 / 修改时间：17:27:01" itemprop="dateCreated datePublished" datetime="2018-10-19T17:18:46+08:00">2018-10-19</time>
+              <time title="创建时间：2018-10-19 17:18:46" itemprop="dateCreated datePublished" datetime="2018-10-19T17:18:46+08:00">2018-10-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-23 17:05:18" itemprop="dateModified" datetime="2019-01-23T17:05:18+08:00">2019-01-23</time>
               
             
           </span>
@@ -403,6 +415,17 @@
       
         <p>使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。</p>
 <p>我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成</p>
+<h1 id="Docker-in-Docker"><a href="#Docker-in-Docker" class="headerlink" title="Docker in Docker"></a>Docker in Docker</h1><p>gitlab runner跑在了docker容器中，而runner执行每个pipline的job也是启动了一个容器实例。如果CI脚本想build一个docker镜像，或者是启动一个容器服务，这里也要运行docker程序。docker in docker in docker?</p>
+<p>官方文档给出了三种解决方案：<br><a href="https://docs.gitlab.com/ee/ci/docker/using_docker_build.html" target="_blank" rel="noopener">https://docs.gitlab.com/ee/ci/docker/using_docker_build.html</a></p>
+<ol>
+<li><p>Use shell executor - 意思就是那就别docker跑runner，在宿主机直接跑runner吧。就变成了 docker in docker</p>
+</li>
+<li><p>Use docker-in-docker executor - 用一个特殊的docker镜像<code>docker:dind</code>，并开通特殊权限。官方推荐此方法。</p>
+</li>
+<li><p>Use Docker socket binding - 通过<code>--docker-volumes /var/run/docker.sock:/var/run/docker.sock</code>来把宿主机的docker服务直接分享给容器实例中，这种做法简单，但又安全隐患。</p>
+</li>
+</ol>
+<p>具体步骤我就不复制了，进官方文档直接看吧。</p>
 
       
     </div>
@@ -504,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -612,6 +644,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-in-Docker"><span class="nav-number">1.</span> <span class="nav-text">Docker in Docker</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="技术宇航">
 <meta property="og:description" content="If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do? 如果宿主机上已经部署了m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-23T08:47:53.522Z">
+<meta property="og:updated_time" content="2019-01-23T09:00:08.187Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker容器怎么访问宿主机的服务">
 <meta name="twitter:description" content="If I have already launched mysql database service in the host server, and now I want allow the service in a docker container instance to access the host’s mysql service. What should I do? 如果宿主机上已经部署了m">
@@ -352,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2019-01-23 16:28:28 / 修改时间：16:47:53" itemprop="dateCreated datePublished" datetime="2019-01-23T16:28:28+08:00">2019-01-23</time>
+              <time title="创建时间：2019-01-23 16:28:28 / 修改时间：17:00:08" itemprop="dateCreated datePublished" datetime="2019-01-23T16:28:28+08:00">2019-01-23</time>
             
 
             
@@ -405,16 +405,16 @@
 <p>I found answer from the stackoverflow:</p>
 <p>通过搜索，我找到了以下相关线索：</p>
 <blockquote>
-<p>For example, on my system:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip addr show docker0</span><br><span class="line">&gt; 7: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default </span><br><span class="line">&gt; link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">&gt; inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt; inet6 fe80::f4d2:49ff:fedd:28a0/64 scope link </span><br><span class="line">&gt; valid_lft forever preferred_lft forever</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>For example, on my system:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ ip addr show docker0</span><br><span class="line">&gt;7: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default </span><br><span class="line">&gt;link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">&gt;inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0</span><br><span class="line">&gt;valid_lft forever preferred_lft forever</span><br><span class="line">&gt;inet6 fe80::f4d2:49ff:fedd:28a0/64 scope link </span><br><span class="line">&gt;valid_lft forever preferred_lft forever</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>And inside a container:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ ip route show</span><br><span class="line">&gt; default via 172.17.0.1 dev eth0 </span><br><span class="line">&gt; 172.17.0.0/16 dev eth0  src 172.17.0.4 </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>And inside a container:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ ip route show</span><br><span class="line">&gt;default via 172.17.0.1 dev eth0 </span><br><span class="line">&gt;172.17.0.0/16 dev eth0  src 172.17.0.4 </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>It’s fairly easy to extract this IP address using a simple shell script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="comment">#!/bin/sh</span></span><br><span class="line">&gt; hostip=$(ip route show | awk <span class="string">'/default/ &#123;print $3&#125;'</span>)</span><br><span class="line">&gt; <span class="built_in">echo</span> <span class="variable">$hostip</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>It’s fairly easy to extract this IP address using a simple shell script:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">#!/bin/sh</span></span><br><span class="line">&gt;hostip=$(ip route show | awk <span class="string">'/default/ &#123;print $3&#125;'</span>)</span><br><span class="line">&gt;<span class="built_in">echo</span> <span class="variable">$hostip</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
-<p>You may need to modify the iptables rules on your host to permit connections from Docker containers. Something like this will do the trick:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $ iptables -A INPUT -i docker0 -j ACCEPT</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+<p>You may need to modify the iptables rules on your host to permit connections from Docker containers. Something like this will do the trick:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;$ iptables -A INPUT -i docker0 -j ACCEPT</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <blockquote>
 <p>This would permit access to any ports on the host from Docker containers. Note that:</p>
