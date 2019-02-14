@@ -356,7 +356,7 @@
                 
               
 
-              <time title="创建时间：2019-02-14 10:09:52 / 修改时间：10:15:42" itemprop="dateCreated datePublished" datetime="2019-02-14T10:09:52+08:00">2019-02-14</time>
+              <time title="创建时间：2019-02-14 10:09:52 / 修改时间：10:31:07" itemprop="dateCreated datePublished" datetime="2019-02-14T10:09:52+08:00">2019-02-14</time>
             
 
             
@@ -402,7 +402,9 @@
 <h2 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./build.sh</span></span><br></pre></td></tr></table></figure>
 <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo ./install.sh</span></span><br></pre></td></tr></table></figure>
 <h1 id="Compile-Contract"><a href="#Compile-Contract" class="headerlink" title="Compile Contract"></a>Compile Contract</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ eosio-cpp -o token.wasm token.cpp --abigen</span><br></pre></td></tr></table></figure>
-<h1 id="Validate-WASM-Hash"><a href="#Validate-WASM-Hash" class="headerlink" title="Validate WASM Hash"></a>Validate WASM Hash</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ md5 token.wasm</span><br><span class="line">MD5 (token.wasm) = c577dfaeb7b2ed69684ed24a7498483d</span><br></pre></td></tr></table></figure>
+<h1 id="Validate-WASM-Hash"><a href="#Validate-WASM-Hash" class="headerlink" title="Validate WASM Hash"></a>Validate WASM Hash</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ md5 token.wasm</span><br><span class="line">MD5 (token.wasm) = c577dfaeb7b2ed69684ed24a7498483d</span><br><span class="line">$ shasum -a 256 token.wasm</span><br><span class="line">9acfb841363b2e67d9bf959795a75e20b16b1b9b455a05ee2d1d7b97c5b6846f  token.wasm</span><br></pre></td></tr></table></figure>
+<p>Compare to deploy transaction <a href="https://eosq.app/tx/a53fdf96b1fa6b990f05d7a5f1007476e5f1e2d7848e1e652ecc866db995937d" target="_blank" rel="noopener">https://eosq.app/tx/a53fdf96b1fa6b990f05d7a5f1007476e5f1e2d7848e1e652ecc866db995937d</a></p>
+
           
         
       
