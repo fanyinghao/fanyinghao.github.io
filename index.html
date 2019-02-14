@@ -310,6 +310,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fyh.me/2019/02/14/eos-complie-smart-contract/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="范生">
+      <meta itemprop="description" content="求知若饥，虚心若愚">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术宇航">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/14/eos-complie-smart-contract/" itemprop="url">
+                  编译EOS智能合约
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-14 10:09:52 / 修改时间：10:15:42" itemprop="dateCreated datePublished" datetime="2019-02-14T10:09:52+08:00">2019-02-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>摘录自<a href="https://developers.eos.io/eosio-home/docs/installing-the-contract-development-toolkit" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="Install-the-CDT"><a href="#Install-the-CDT" class="headerlink" title="Install the CDT"></a>Install the CDT</h1><h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> --recursive https://github.com/eosio/eosio.cdt --branch v1.4.1 --single-branch</span><br><span class="line">$ <span class="built_in">cd</span> eosio.cdt</span><br></pre></td></tr></table></figure>
+<p>It may take up to 30 minutes to clone the repository</p>
+<h2 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./build.sh</span></span><br></pre></td></tr></table></figure>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo ./install.sh</span></span><br></pre></td></tr></table></figure>
+<h1 id="Compile-Contract"><a href="#Compile-Contract" class="headerlink" title="Compile Contract"></a>Compile Contract</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ eosio-cpp -o token.wasm token.cpp --abigen</span><br></pre></td></tr></table></figure>
+<h1 id="Validate-WASM-Hash"><a href="#Validate-WASM-Hash" class="headerlink" title="Validate WASM Hash"></a>Validate WASM Hash</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ md5 token.wasm</span><br><span class="line">MD5 (token.wasm) = c577dfaeb7b2ed69684ed24a7498483d</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://fyh.me/2019/01/23/how-to-access-host-port-from-docker-container/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1371,7 +1516,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

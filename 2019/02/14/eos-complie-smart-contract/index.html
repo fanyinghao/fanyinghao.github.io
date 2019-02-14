@@ -108,25 +108,24 @@
 
 
 
-  <meta name="description" content="摘录自以太坊白皮书，文中前部分从技术角度解析比特币区块链的原理，我只是划重点把比特币部分知识点摘抄下来。 作为状态转换系统的比特币从技术角度讲，比特币账本可以被认为是一个状态转换系统，该系统包括所有现存的比特币所有权状态和“状态转换函数”。状态转换函数以当前状态和交易为输入，输出新的状态。例如，在标准的银行系统中，状态就是一个资产负债表，一个从A账户向B账户转账X美元的请求是一笔交易，状态转换函数">
-<meta name="keywords" content="区块链,比特币">
+  <meta name="description" content="摘录自官方文档 Install the CDTDownload12$ git clone --recursive https://github.com/eosio/eosio.cdt --branch v1.4.1 --single-branch$ cd eosio.cdt It may take up to 30 minutes to clone the repository Build1$ .">
 <meta property="og:type" content="article">
-<meta property="og:title" content="比特币学习摘录">
-<meta property="og:url" content="https://fyh.me/2018/07/15/blockchain-bitcoin-notes/index.html">
+<meta property="og:title" content="编译EOS智能合约">
+<meta property="og:url" content="https://fyh.me/2019/02/14/eos-complie-smart-contract/index.html">
 <meta property="og:site_name" content="技术宇航">
-<meta property="og:description" content="摘录自以太坊白皮书，文中前部分从技术角度解析比特币区块链的原理，我只是划重点把比特币部分知识点摘抄下来。 作为状态转换系统的比特币从技术角度讲，比特币账本可以被认为是一个状态转换系统，该系统包括所有现存的比特币所有权状态和“状态转换函数”。状态转换函数以当前状态和交易为输入，输出新的状态。例如，在标准的银行系统中，状态就是一个资产负债表，一个从A账户向B账户转账X美元的请求是一笔交易，状态转换函数">
+<meta property="og:description" content="摘录自官方文档 Install the CDTDownload12$ git clone --recursive https://github.com/eosio/eosio.cdt --branch v1.4.1 --single-branch$ cd eosio.cdt It may take up to 30 minutes to clone the repository Build1$ .">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-31T06:44:58.014Z">
+<meta property="og:updated_time" content="2019-02-14T02:15:42.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="比特币学习摘录">
-<meta name="twitter:description" content="摘录自以太坊白皮书，文中前部分从技术角度解析比特币区块链的原理，我只是划重点把比特币部分知识点摘抄下来。 作为状态转换系统的比特币从技术角度讲，比特币账本可以被认为是一个状态转换系统，该系统包括所有现存的比特币所有权状态和“状态转换函数”。状态转换函数以当前状态和交易为输入，输出新的状态。例如，在标准的银行系统中，状态就是一个资产负债表，一个从A账户向B账户转账X美元的请求是一笔交易，状态转换函数">
+<meta name="twitter:title" content="编译EOS智能合约">
+<meta name="twitter:description" content="摘录自官方文档 Install the CDTDownload12$ git clone --recursive https://github.com/eosio/eosio.cdt --branch v1.4.1 --single-branch$ cd eosio.cdt It may take up to 30 minutes to clone the repository Build1$ .">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fyh.me/2018/07/15/blockchain-bitcoin-notes/"/>
+  <link rel="canonical" href="https://fyh.me/2019/02/14/eos-complie-smart-contract/"/>
 
 
 
@@ -136,7 +135,7 @@
   };
 </script>
 
-  <title>比特币学习摘录 | 技术宇航</title>
+  <title>编译EOS智能合约 | 技术宇航</title>
   
 
 
@@ -311,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/07/15/blockchain-bitcoin-notes/">
+    <link itemprop="mainEntityOfPage" href="https://fyh.me/2019/02/14/eos-complie-smart-contract/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范生">
@@ -328,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">比特币学习摘录
+          <h1 class="post-title" itemprop="name headline">编译EOS智能合约
               
             
           </h1>
@@ -353,46 +352,16 @@
                 
               
 
-              <time title="创建时间：2018-07-15 13:22:08" itemprop="dateCreated datePublished" datetime="2018-07-15T13:22:08+08:00">2018-07-15</time>
+              <time title="创建时间：2019-02-14 10:09:52 / 修改时间：10:15:42" itemprop="dateCreated datePublished" datetime="2019-02-14T10:09:52+08:00">2019-02-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-31 14:44:58" itemprop="dateModified" datetime="2018-07-31T14:44:58+08:00">2018-07-31</time>
               
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/区块链/" itemprop="url" rel="index"><span itemprop="name">区块链</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -402,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/15/blockchain-bitcoin-notes/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/15/blockchain-bitcoin-notes/" itemprop="commentsCount"></span>
+                <a href="/2019/02/14/eos-complie-smart-contract/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/14/eos-complie-smart-contract/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -431,42 +400,13 @@
       
 
       
-        <p>摘录自<a href="https://github.com/ethereum/wiki/wiki/%5B%E4%B8%AD%E6%96%87%5D-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E7%99%BD%E7%9A%AE%E4%B9%A6" target="_blank" rel="noopener">以太坊白皮书</a>，文中前部分从技术角度解析比特币区块链的原理，我只是划重点把比特币部分知识点摘抄下来。</p>
-<h1 id="作为状态转换系统的比特币"><a href="#作为状态转换系统的比特币" class="headerlink" title="作为状态转换系统的比特币"></a>作为状态转换系统的比特币</h1><p>从技术角度讲，比特币账本可以被认为是一个状态转换系统，该系统包括所有现存的比特币所有权状态和“状态转换函数”。状态转换函数以当前状态和交易为输入，输出新的状态。例如，在标准的银行系统中，状态就是一个资产负债表，一个从A账户向B账户转账X美元的请求是一笔交易，状态转换函数将从A账户中减去X美元，向B账户增加X美元。如果A账户的余额小于X美元，状态转换函数就会返回错误提示。所以我们可以如下定义状态转换函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(S,TX) ­&gt; S&apos; or ERROR</span><br></pre></td></tr></table></figure>
-<p>在上面提到的银行系统中，状态转换函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(&#123; Alice: $50, Bob: $50 &#125;,&quot;send $20 from Alice to Bob&quot;) = &#123; Alice: $30,Bob: $70 &#125;</span><br></pre></td></tr></table></figure>
-<p>但是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APPLY(&#123; Alice: $50, Bob: $50 &#125;,&quot;send $70 from Alice to Bob&quot;) = ERROR</span><br></pre></td></tr></table></figure>
-<p>比特币系统的“状态”是所有已经被挖出的、没有花费的比特币（技术上称为“未花费的交易输出，unspent transaction outputs 或UTXO”）的集合。每个UTXO都有一个面值和所有者（由20个字节的本质上是密码学公钥的地址所定义）。一笔交易包括一个或多个输入和一个或多个输出。每个输入包含一个对现有UTXO的引用和由与所有者地址相对应的私钥创建的密码学签名。每个输出包含一个新的加入到状态中的UTXO。</p>
-<p>在比特币系统中，状态转换函数APPLY(S,TX)-&gt;S’大体上可以如下定义：</p>
-<blockquote>
-<ol>
-<li>交易的每个输入：<ul>
-<li>如果引用的UTXO不存在于现在的状态中（S），返回错误提示</li>
-<li>如果签名与UTXO所有者的签名不一致，返回错误提示</li>
-</ul>
-</li>
-<li>如果所有的UTXO输入面值总额小于所有的UTXO输出面值总额，返回错误提示</li>
-<li>返回新状态S’,新状态S’中移除了所有的输入UTXO，增加了所有的输出UTXO。</li>
-</ol>
-</blockquote>
-<p>第一步的第一部分防止交易的发送者花费不存在的比特币，第二部分防止交易的发送者花费其他人的比特币。第二步确保价值守恒。比特币的支付协议如下。假设Alice想给Bob发送11.7BTC。事实上，Alice不可能正好有11.7BTC。假设，她能得到的最小数额比特币的方式是：6+4+2=12。所以，她可以创建一笔有3个输入，2个输出的交易。第一个输出的面值是11.7BTC，所有者是Bob（Bob的比特币地址），第二个输出的面值是0.3BTC，所有者是Alice自己，也就是找零。</p>
-<h1 id="挖矿"><a href="#挖矿" class="headerlink" title="挖矿"></a>挖矿</h1><p>比特币的去中心化共识进程要求网络中的节点不断尝试将交易打包成“区块”。网络被设计为大约每十分钟产生一个区块，每个区块包含一个时间戳、一个随机数、一个对上一个区块的引用（即哈希）和上一区块生成以来发生的所有交易列表。这样随着时间流逝就创建出了一个持续增长的区块链，它不断地更新，从而能够代表比特币账本的最新状态。</p>
-<p>依照这个范式，检查一个区块是否有效的算法如下：</p>
-<blockquote>
-<ol>
-<li>检查区块引用的上一个区块是否存在且有效。</li>
-<li>检查区块的时间戳是否晚于以前的区块的时间戳，而且早于未来2小时。</li>
-<li>检查区块的工作量证明是否有效。</li>
-<li>将上一个区块的最终状态赋于S[0]。</li>
-<li>假设TX是区块的交易列表，包含n笔交易。对于属于0……n-1的所有i,进行状态转换S[i+1] = APPLY(S[i],TX[i])。如果任何一笔交易i在状态转换中出错，退出程序，返回错误。</li>
-<li>返回正确，状态S[n]是这一区块的最终状态。</li>
-</ol>
-</blockquote>
-<p>区块验证算法的有趣部分是“工作量证明”概念：对每个区块进行SHA256哈希处理，将得到的哈希视为长度为256比特的数值，该数值必须小于不断动态调整的目标数值，本书写作时目标数值大约是2^190。工作量证明的目的是使区块的创建变得困难，从而阻止女巫攻击者恶意重新生成区块链。因为SHA256是完全不可预测的伪随机函数，创建有效区块的唯一方法就是简单地不断试错，不断地增加随机数的数值，查看新的哈希数值是否小于目标数值。如果当前的目标数值是2^192，就意味着平均需要尝试2^64次才能生成有效的区块。一般而言，比特币网络每隔2016个区块重新设定目标数值，保证平均每十分钟生成一个区块。为了对矿工的计算工作进行奖励，每一个成功生成区块的矿工有权在区块中包含一笔凭空发给他们自己25BTC的交易。另外，如果交易的输入大于输出，差额部分就作为“交易费用”付给矿工。顺便提一下，对矿工的奖励是比特币发行的唯一机制，创世状态中并没有比特币。</p>
-<h1 id="默克尔树"><a href="#默克尔树" class="headerlink" title="默克尔树"></a>默克尔树</h1><p>默克尔树是一种二叉树，由一组叶节点、一组中间节点和一个根节点构成。最下面的大量的叶节点包含基础数据，每个中间节点是它的两个子节点的哈希，根节点也是由它的两个子节点的哈希，代表了默克尔树的顶部。默克尔树的目的是允许区块的数据可以零散地传送：节点可以从一个源下载区块头，从另外的源下载与其有关的树的其它部分，而依然能够确认所有的数据都是正确的。之所以如此是因为哈希向上的扩散：如果一个恶意用户尝试在树的下部加入一个伪造的交易，所引起的改动将导致树的上层节点的改动，以及更上层节点的改动，最终导致根节点的改动以及区块哈希的改动，这样协议就会将其记录为一个完全不同的区块（几乎可以肯定是带着不正确的工作量证明的）。</p>
-
+        <p>摘录自<a href="https://developers.eos.io/eosio-home/docs/installing-the-contract-development-toolkit" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="Install-the-CDT"><a href="#Install-the-CDT" class="headerlink" title="Install the CDT"></a>Install the CDT</h1><h2 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> --recursive https://github.com/eosio/eosio.cdt --branch v1.4.1 --single-branch</span><br><span class="line">$ <span class="built_in">cd</span> eosio.cdt</span><br></pre></td></tr></table></figure>
+<p>It may take up to 30 minutes to clone the repository</p>
+<h2 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./build.sh</span></span><br></pre></td></tr></table></figure>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo ./install.sh</span></span><br></pre></td></tr></table></figure>
+<h1 id="Compile-Contract"><a href="#Compile-Contract" class="headerlink" title="Compile Contract"></a>Compile Contract</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ eosio-cpp -o token.wasm token.cpp --abigen</span><br></pre></td></tr></table></figure>
+<h1 id="Validate-WASM-Hash"><a href="#Validate-WASM-Hash" class="headerlink" title="Validate WASM Hash"></a>Validate WASM Hash</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ md5 token.wasm</span><br><span class="line">MD5 (token.wasm) = c577dfaeb7b2ed69684ed24a7498483d</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -484,14 +424,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/区块链/" rel="tag"># 区块链</a>
-          
-            <a href="/tags/比特币/" rel="tag"># 比特币</a>
-          
-        </div>
-      
 
       
       
@@ -501,8 +433,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/12/nginx-docker-miniprogram/" rel="next" title="利用 Nginx 做反向代理解决微信小程序业务域名限制问题">
-                <i class="fa fa-chevron-left"></i> 利用 Nginx 做反向代理解决微信小程序业务域名限制问题
+              <a href="/2019/01/23/how-to-access-host-port-from-docker-container/" rel="next" title="Docker容器怎么访问宿主机的服务">
+                <i class="fa fa-chevron-left"></i> Docker容器怎么访问宿主机的服务
               </a>
             
           </div>
@@ -510,10 +442,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/01/blockchain-ethereum-smart-contract-notes/" rel="prev" title="以太坊智能合约学习摘录">
-                以太坊智能合约学习摘录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#作为状态转换系统的比特币"><span class="nav-number">1.</span> <span class="nav-text">作为状态转换系统的比特币</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挖矿"><span class="nav-number">2.</span> <span class="nav-text">挖矿</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#默克尔树"><span class="nav-number">3.</span> <span class="nav-text">默克尔树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-the-CDT"><span class="nav-number">1.</span> <span class="nav-text">Install the CDT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download"><span class="nav-number">1.1.</span> <span class="nav-text">Download</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Build"><span class="nav-number">1.2.</span> <span class="nav-text">Build</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">1.3.</span> <span class="nav-text">Install</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compile-Contract"><span class="nav-number">2.</span> <span class="nav-text">Compile Contract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Validate-WASM-Hash"><span class="nav-number">3.</span> <span class="nav-text">Validate WASM Hash</span></a></li></ol></div>
             
 
           </div>
