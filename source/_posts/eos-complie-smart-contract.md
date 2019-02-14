@@ -36,4 +36,7 @@ $ eosio-cpp -o token.wasm token.cpp --abigen
 ```bash
 $ md5 token.wasm
 MD5 (token.wasm) = c577dfaeb7b2ed69684ed24a7498483d
+$ shasum -a 256 token.wasm
+9acfb841363b2e67d9bf959795a75e20b16b1b9b455a05ee2d1d7b97c5b6846f  token.wasm
 ```
+Compare to deploy transaction https://eosq.app/tx/a53fdf96b1fa6b990f05d7a5f1007476e5f1e2d7848e1e652ecc866db995937d
