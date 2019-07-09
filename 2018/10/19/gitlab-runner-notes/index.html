@@ -112,11 +112,11 @@
 <meta name="keywords" content="docker,gitlab,gitlab runner">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Docker部署Gitlab Runner遇到的坑">
-<meta property="og:url" content="https://fyh.me/2018/10/19/gitlab-runner-notes/index.html">
+<meta property="og:url" content="https://yinghao.fan/2018/10/19/gitlab-runner-notes/index.html">
 <meta property="og:site_name" content="技术宇航">
 <meta property="og:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成 Docker in Dockergitlab runner跑在了docker容器中，而runner执行每个pipl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-23T09:05:18.599Z">
+<meta property="og:updated_time" content="2019-01-23T09:05:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Docker部署Gitlab Runner遇到的坑">
 <meta name="twitter:description" content="使用Gitlab Runner来做CI/CD，从部署gitlab到注册runner都是很顺利，因为官方提供了便捷的安装脚本。当要做CD（持续部署）时，一时没想到怎么做。 我的部署是在宿主机上使用Docker分别跑起了Gitlab Runner和Nginx两个容器，用了hexo工具生成 Docker in Dockergitlab runner跑在了docker容器中，而runner执行每个pipl">
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="https://fyh.me/2018/10/19/gitlab-runner-notes/"/>
+  <link rel="canonical" href="https://yinghao.fan/2018/10/19/gitlab-runner-notes/"/>
 
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fyh.me/2018/10/19/gitlab-runner-notes/">
+    <link itemprop="mainEntityOfPage" href="https://yinghao.fan/2018/10/19/gitlab-runner-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="范生">
@@ -834,8 +834,8 @@
 <!-- LOCAL: You can save these files to your site and update links -->
     
         
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js"></script>
     
 <!-- END LOCAL -->
 
@@ -854,9 +854,9 @@
             oauth: {
             
             
-                client_secret: '93b52962508cc274c2e8049ab5106b78ce1aeaea',
+                client_secret: '74267f748b3df61dc56efe4c1b2f1a5069ddaaa4',
             
-                client_id: '39bce08eba7c8e1517b1'
+                client_id: '9d522c011d61fde7400c'
             }});
         gitment.render('gitment-container');
       }
